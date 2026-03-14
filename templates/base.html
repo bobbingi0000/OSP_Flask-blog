@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOB'S CYBER LOG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chrome-title">BOB'S CYBER LOG</div>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <marquee style="color: silver; width: 60%; font-family: 'Courier New', monospace;">>>> WELCOME TO THE YEAR 2000 <<<</marquee>
+    </div>
+    
+    {% block content %}{% endblock %}
+
+    <footer>
+        [SYSTEM SECURE] -- MEMORY AVAILABLE: 640K -- [END OF FILE]
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="desktop">
+    <!-- LEFT COLUMN -->
+    <div class="col left">
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">NAVIGATION.EXE</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content nav-list">
+                <a href="{{ url_for('home') }}">[0] HOME</a>
+                <a href="#">[1] ARCHIVE</a>
+                <a href="{{ url_for('guestbook') }}">[2] GUESTBOOK</a>
+                <a href="{{ url_for('write') }}">[3] WRITE_LOG</a>
+            </div>
+        </div>
+
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">TERMINAL</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+                C:\ROOT> SYS_MONITOR.EXE<br>
+                LOADING MODULES... OK<br>
+                ESTABLISHING SECURE CONNECTION... OK<br>
+                AWAITING INPUT...<br>
+                C:\ROOT> <span class="cursor"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CENTER COLUMN -->
+    <div class="col center">
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">LATEST_LOGS.EXE</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content">
+                <h3 style="color: #ff00ff; margin-top: 0; text-transform: uppercase;">>>> Recent System Logs</h3>
+                <div class="log-entry">
+                    <span class="log-date">[2026-03-13]</span>
+                    SYSTEM INITIALIZED. Hello World. Boot sequence completed normally.
+                </div>
+                <div class="log-entry">
+                    <span class="log-date">[2026-03-12]</span>
+                    Thinking about the stock market... uploading thoughts to mainframe.
+                </div>
+                <div class="log-entry" style="border-bottom: none;">
+                    <span class="log-date">[2026-03-10]</span>
+                    Studying Git branching strategies. Sector 4 memory allocated.
+                </div>
+            </div>
+        </div>
+
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">SYSTEM_STATUS.DAT</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content">
+                <div class="status-row">
+                    <span class="status-label">CPU:</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="cpu-bar" style="width: 24%; background-color: #00ffff;"></div>
+                    </div>
+                </div>
+                <div class="status-row">
+                    <span class="status-label">MEM:</span>
+                    <div class="bar-container">
+                        <div class="bar-fill" id="mem-bar" style="width: 89%; background-color: #ff00ff;"></div>
+                    </div>
+                </div>
+                <div class="status-row">
+                    <span class="status-label" style="width: 80px;">NETWORK:</span>
+                    <span style="color: #00ff00; font-weight: bold; text-shadow: 0 0 5px #00ff00;">ONLINE</span>
+                </div>
+                <div class="status-row" style="margin-top: 15px; font-size: 0.9em; color: silver;">
+                    SYS_TIME: <span id="sys-clock"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">VISITOR_LOG.SYS</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content" style="text-align: center;">
+                <div
+                    style="font-size: 3rem; font-weight: bold; color: #ff0000; text-shadow: 0 0 10px #ff0000; font-family: 'Courier New', monospace; letter-spacing: 5px;">
+                    0094218
+                </div>
+                <div style="color: #00ffff; margin-top: 5px;">TOTAL UNIQUE CONNECTIONS</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col right">
+        <!-- Media Player -->
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">MEDIA_PLAYER.BIN</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content" style="text-align: center;">
+                <div style="color: #ff00ff; margin-bottom: 10px;">NOW PLAYING:</div>
+                <div style="font-weight: bold; color: #fff; margin-bottom: 15px;">CYBER_OST.MP3</div>
+                <div style="display: flex; justify-content: space-around; font-size: 1.5rem;">
+                    <span style="cursor: pointer; color:#c0c0c0;">◀◀</span>
+                    <span style="cursor: pointer; color:#00ff00; text-shadow: 0 0 8px #00ff00;">▶</span>
+                    <span style="cursor: pointer; color:#c0c0c0;">■</span>
+                    <span style="cursor: pointer; color:#c0c0c0;">▶▶</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Digital Archive -->
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">DIGITAL_ARCHIVE.DIR</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content folder-grid">
+                <div>
+                    <div class="folder-icon">📁</div>
+                    <div>MUSIC</div>
+                </div>
+                <div>
+                    <div class="folder-icon">📁</div>
+                    <div>PHOTOS</div>
+                </div>
+                <div>
+                    <div class="folder-icon">📁</div>
+                    <div>TEXTS</div>
+                </div>
+                <div>
+                    <div class="folder-icon">📁</div>
+                    <div style="color: #ff0000;">SECRETS</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guestbook Preview -->
+        <div class="os-window">
+            <div class="os-window-header">
+                <span class="os-window-title">GUEST_BOOK.LOG</span>
+                <span class="os-window-controls">
+                    <span class="control-btn">_</span>
+                    <span class="control-btn">ㅁ</span>
+                    <span class="control-btn">X</span>
+                </span>
+            </div>
+            <div class="os-window-content" style="font-size: 0.9rem;">
+                <div style="margin-bottom: 5px;">&lt;Neo&gt; Follow the white rabbit.</div>
+                <div style="margin-bottom: 5px; color:#ff00ff;">&lt;Trinity&gt; Dodge this.</div>
+                <div style="color:#00ffff;">&lt;Morpheus&gt; Welcome to the real world.</div>
+                <div style="margin-top: 15px; text-align: right;">
+                    <a href="{{ url_for('guestbook') }}" style="font-size: 0.8rem;">[VIEW_ALL] &gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

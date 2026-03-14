@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="desktop" style="grid-template-columns: 1fr; max-width: 800px;">
+    <div class="os-window">
+        <div class="os-window-header">
+            <span class="os-window-title">{{ page_title | default('NEW LOG ENTRY') }}</span>
+            <span class="os-window-controls">
+                <span class="control-btn">_</span>
+                <span class="control-btn">ㅁ</span>
+                <span class="control-btn">X</span>
+            </span>
+        </div>
+        <div class="os-window-content">
+            {% if request.method == 'POST' %}
+            <div style="text-align: center; padding: 30px;">
+                <h3 style="color: #ff00ff;">Upload Success!</h3>
+                <p style="font-size: 1.2rem;">Post "<b style="color: #fff;">{{ title }}</b>" has been saved to the
+                    mainframe.</p>
+                <br><br>
+                <a href="{{ url_for('home') }}" style="border: 1px solid #00ff00; padding: 10px 20px;">[ RETURN TO HOME
+                    ]</a>
+            </div>
+            {% else %}
+            <form action="{{ url_for('write') }}" method="post">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; color: #00ffff;">>>> TITLE:</label>
+                    <input type="text" name="title" style="width: 100%; border-color: #00ffff;" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; color: #00ffff;">>>> LOG_CONTENT:</label>
+                    <textarea name="content" rows="10" style="width: 100%;" required></textarea>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="{{ url_for('home') }}" style="color: silver;">[ ABORT ]</a>
+                    <button type="submit" style="padding: 10px 30px; font-size: 1.2rem; background: #004400;">TRANSMIT
+                        DATA</button>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
