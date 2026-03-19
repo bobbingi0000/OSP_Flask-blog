@@ -52,7 +52,7 @@
                 </span>
             </div>
             <div class="os-window-content">
-                <h3 style="color: #ff00ff; margin-top: 0; text-transform: uppercase;">>>> Recent System Logs</h3>
+                <h3 style="color: #00f3ff; margin-top: 0; text-transform: uppercase; text-shadow: 0 0 5px #00f3ff;">>>> Recent System Logs</h3>
                 <div class="log-entry">
                     <span class="log-date">[2026-03-13]</span>
                     SYSTEM INITIALIZED. Hello World. Boot sequence completed normally.
@@ -81,18 +81,18 @@
                 <div class="status-row">
                     <span class="status-label">CPU:</span>
                     <div class="bar-container">
-                        <div class="bar-fill" id="cpu-bar" style="width: 24%; background-color: #00ffff;"></div>
+                        <div class="bar-fill" id="cpu-bar" style="width: 24%;"></div>
                     </div>
                 </div>
                 <div class="status-row">
                     <span class="status-label">MEM:</span>
                     <div class="bar-container">
-                        <div class="bar-fill" id="mem-bar" style="width: 89%; background-color: #ff00ff;"></div>
+                        <div class="bar-fill" id="mem-bar" style="width: 89%;"></div>
                     </div>
                 </div>
                 <div class="status-row">
-                    <span class="status-label" style="width: 80px;">NETWORK:</span>
-                    <span style="color: #00ff00; font-weight: bold; text-shadow: 0 0 5px #00ff00;">ONLINE</span>
+                    <span class="status-label">NETWORK:</span>
+                    <span style="color: #39ff14; font-weight: bold; text-shadow: 0 0 5px #39ff14;">ONLINE</span>
                 </div>
                 <div class="status-row" style="margin-top: 15px; font-size: 0.9em; color: silver;">
                     SYS_TIME: <span id="sys-clock"></span>
@@ -110,11 +110,10 @@
                 </span>
             </div>
             <div class="os-window-content" style="text-align: center;">
-                <div
-                    style="font-size: 3rem; font-weight: bold; color: #ff0000; text-shadow: 0 0 10px #ff0000; font-family: 'Courier New', monospace; letter-spacing: 5px;">
+                <div style="font-size: 3rem; font-weight: bold; color: #39ff14; text-shadow: 0 0 10px #39ff14; font-family: 'Courier New', monospace; letter-spacing: 5px;">
                     0094218
                 </div>
-                <div style="color: #00ffff; margin-top: 5px;">TOTAL UNIQUE CONNECTIONS</div>
+                <div style="color: #00f3ff; margin-top: 5px; text-shadow: 0 0 5px #00f3ff;">TOTAL UNIQUE CONNECTIONS</div>
             </div>
         </div>
     </div>
@@ -132,13 +131,13 @@
                 </span>
             </div>
             <div class="os-window-content" style="text-align: center;">
-                <div style="color: #ff00ff; margin-bottom: 10px;">NOW PLAYING:</div>
-                <div style="font-weight: bold; color: #fff; margin-bottom: 15px;">CYBER_OST.MP3</div>
+                <div style="color: #00f3ff; margin-bottom: 10px; text-shadow: 0 0 5px #00f3ff;">NOW PLAYING:</div>
+                <div style="font-weight: bold; color: #fff; margin-bottom: 15px; text-shadow: 0 0 5px #fff;">CYBER_OST.MP3</div>
                 <div style="display: flex; justify-content: space-around; font-size: 1.5rem;">
-                    <span style="cursor: pointer; color:#c0c0c0;">◀◀</span>
-                    <span style="cursor: pointer; color:#00ff00; text-shadow: 0 0 8px #00ff00;">▶</span>
-                    <span style="cursor: pointer; color:#c0c0c0;">■</span>
-                    <span style="cursor: pointer; color:#c0c0c0;">▶▶</span>
+                    <span style="cursor: pointer; color:#5a7e91;">◀◀</span>
+                    <span style="cursor: pointer; color:#39ff14; text-shadow: 0 0 8px #39ff14;">▶</span>
+                    <span style="cursor: pointer; color:#5a7e91;">■</span>
+                    <span style="cursor: pointer; color:#5a7e91;">▶▶</span>
                 </div>
             </div>
         </div>
@@ -168,7 +167,7 @@
                 </div>
                 <div>
                     <div class="folder-icon">📁</div>
-                    <div style="color: #ff0000;">SECRETS</div>
+                    <div style="color: #39ff14; text-shadow: 0 0 5px #39ff14;">SECRETS</div>
                 </div>
             </div>
         </div>
@@ -183,12 +182,12 @@
                     <span class="control-btn">X</span>
                 </span>
             </div>
-            <div class="os-window-content" style="font-size: 0.9rem;">
+            <div class="os-window-content" style="font-size: 1rem; color: #39ff14;">
                 <div style="margin-bottom: 5px;">&lt;Neo&gt; Follow the white rabbit.</div>
-                <div style="margin-bottom: 5px; color:#ff00ff;">&lt;Trinity&gt; Dodge this.</div>
-                <div style="color:#00ffff;">&lt;Morpheus&gt; Welcome to the real world.</div>
+                <div style="margin-bottom: 5px; color:#00f3ff; text-shadow: 0 0 5px #00f3ff;">&lt;Trinity&gt; Dodge this.</div>
+                <div style="color:#ffffff; text-shadow: 0 0 5px #ffffff;">&lt;Morpheus&gt; Welcome to the real world.</div>
                 <div style="margin-top: 15px; text-align: right;">
-                    <a href="{{ url_for('guestbook') }}" style="font-size: 0.8rem;">[VIEW_ALL] &gt;&gt;</a>
+                    <a href="{{ url_for('guestbook') }}" style="font-size: 1rem;">[VIEW_ALL] &gt;&gt;</a>
                 </div>
             </div>
         </div>
