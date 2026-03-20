@@ -1,61 +1,13 @@
 import pytest
-from flask import Flask, request, redirect, url_for, render_template_string
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
-
-# ==========================================
-# 1. 앱 내부 로직 (GREEN 달성을 위한 구현)
-# ==========================================
-app = Flask(__name__)
-app.config['TESTING'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
-
-class GuestbookEntry(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    author = db.Column(db.String(50), nullable=False)
-    content = db.Column(db.String(500), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-
-@app.route('/guestbook', methods=['GET', 'POST'])
-def guestbook():
-    if request.method == 'POST':
-        author = request.form.get('author')
-        content = request.form.get('content')
-        
-        if author is not None and content is not None:
-            # 1. 공백 우회(Whitespace bypass) 방어를 위해 공백 제거
-            author = author.strip()
-            content = content.strip()
-            
-            # 제거 후 빈 값이 아니며, 
-            # 2. 페이로드 크기 방어를 위해 DB 컬럼 최대 길이를 넘지 않는지 검증 (author<=50, content<=500)
-            if len(author) > 0 and len(content) > 0 and len(author) <= 50 and len(content) <= 500:
-                entry = GuestbookEntry(author=author, content=content)
-                db.session.add(entry)
-                db.session.commit()
-            
-        return redirect(url_for('guestbook'))
-        
-    # GET 시나리오: DB에서 데이터 불러오기
-    # 3. 메모리 폭발(.all()) 방어를 위해 최신 데이터 10개로 페이징 제한(limit)
-    entries = GuestbookEntry.query.order_by(GuestbookEntry.created_at.desc()).limit(10).all()
-    
-    # guestbook.html 파일 대신, test_app.py 안에서 결과 검증이 가능하도록 임시 템플릿 사용
-    template = '''
-    {% for entry in entries %}
-        [{{ entry.author }}] : {{ entry.content }}
-    {% endfor %}
-    '''
-    return render_template_string(template, entries=entries)
+from app import app, db, GuestbookEntry
 
 # ==========================================
 # 2. 테스트 환경 설정 및 테스트 케이스
 # ==========================================
 @pytest.fixture
 def client():
+    app.config['TESTING'] = True
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
     with app.test_client() as client:
         with app.app_context():
             db.create_all()
@@ -196,3 +148,4 @@ def test_guestbook_get_pagination(client):
     assert 'Test_Content_14' in html_data
     # 10개씩 페이징 처리된다면 초창기 글인 0번째 글은 1페이지 화면에 보이면 안 됨 (RED 조건 발동 지점)
     assert 'Test_Content_0' not in html_data
+
