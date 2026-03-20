@@ -7,16 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="chrome-title">BOB'S CYBER LOG</div>
-    <div style="text-align: center; margin-bottom: 24px;">
-        <marquee style="color: #00f3ff; width: 60%; font-family: 'VT323', monospace; text-shadow: 0 0 5px #00f3ff;">>>> WELCOME TO THE YEAR 2000 <<<</marquee>
-    </div>
-    
-    {% block content %}{% endblock %}
+    <div class="monitor-frame">
+        <div class="monitor-screen">
+            <div class="crt-content">
+                <div class="chrome-title">BOB'S CYBER LOG</div>
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <marquee style="color: #00f3ff; width: 60%; font-family: 'VT323', monospace; text-shadow: 0 0 5px #00f3ff;">>>> WELCOME TO THE YEAR 2000 <<<</marquee>
+                </div>
+                
+                {% block content %}{% endblock %}
 
-    <footer>
-        [SYSTEM SECURE] -- MEMORY AVAILABLE: 640K -- [END OF FILE]
-    </footer>
+                <footer>
+                    [SYSTEM SECURE] -- MEMORY AVAILABLE: 640K -- [END OF FILE]
+                </footer>
+            </div>
+        </div>
+    </div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
