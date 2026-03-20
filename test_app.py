@@ -25,16 +25,23 @@ def guestbook():
         author = request.form.get('author')
         content = request.form.get('content')
         
-        # 3번 시나리오 (Edge Case): author나 content가 빈 값이면 저장 불가
-        if author and content:
-            entry = GuestbookEntry(author=author, content=content)
-            db.session.add(entry)
-            db.session.commit()
+        if author is not None and content is not None:
+            # 1. 공백 우회(Whitespace bypass) 방어를 위해 공백 제거
+            author = author.strip()
+            content = content.strip()
+            
+            # 제거 후 빈 값이 아니며, 
+            # 2. 페이로드 크기 방어를 위해 DB 컬럼 최대 길이를 넘지 않는지 검증 (author<=50, content<=500)
+            if len(author) > 0 and len(content) > 0 and len(author) <= 50 and len(content) <= 500:
+                entry = GuestbookEntry(author=author, content=content)
+                db.session.add(entry)
+                db.session.commit()
             
         return redirect(url_for('guestbook'))
         
     # GET 시나리오: DB에서 데이터 불러오기
-    entries = GuestbookEntry.query.order_by(GuestbookEntry.created_at.desc()).all()
+    # 3. 메모리 폭발(.all()) 방어를 위해 최신 데이터 10개로 페이징 제한(limit)
+    entries = GuestbookEntry.query.order_by(GuestbookEntry.created_at.desc()).limit(10).all()
     
     # guestbook.html 파일 대신, test_app.py 안에서 결과 검증이 가능하도록 임시 템플릿 사용
     template = '''
