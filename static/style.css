@@ -18,10 +18,10 @@ body {
 
 /* Base CRT Monitor Frame */
 .monitor-frame {
-    background: url('/static/images/apple_crt.png') no-repeat center center;
+    background: url('/static/images/CRT_monitor.svg') no-repeat center center;
     background-size: 100% 100%;
     height: 90vh;
-    aspect-ratio: 500 / 431;
+    aspect-ratio: 1160 / 967;
     position: relative;
     margin: 0 auto;
 
@@ -40,10 +40,10 @@ body {
 /* The Glowing Screen Area */
 .monitor-screen {
     position: absolute;
-    left: 22.4%;
-    top: 15.1%;
-    width: 43%;
-    height: 35.1%;
+    left: 15.34%;
+    top: 30.09%;
+    width: 68.97%;
+    height: 53.77%;
     
     background-color: #030608;
     background-image: 
@@ -51,7 +51,7 @@ body {
         linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px),
         repeating-linear-gradient(rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 2px, transparent 2px, transparent 4px);
     background-size: 30px 30px, 30px 30px, 100% 100%;
-    border-radius: 12px; /* Subtle inward curve */
+    border-radius: 5px;
     border: none;
     box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.2);
     padding: 0; 
