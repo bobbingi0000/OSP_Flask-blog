@@ -1,57 +1,29 @@
 {% extends "base.html" %}
+{% from "macros.html" import os_window %}
 
 {% block content %}
 <div class="desktop">
     <!-- LEFT COLUMN -->
     <div class="col left">
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">NAVIGATION.EXE</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content nav-list">
+        {% call os_window("NAVIGATION.EXE", content_class="nav-list") %}
                 <a href="{{ url_for('home') }}">[0] HOME</a>
                 <a href="#">[1] ARCHIVE</a>
                 <a href="{{ url_for('guestbook') }}">[2] GUESTBOOK</a>
                 <a href="{{ url_for('write') }}">[3] WRITE_LOG</a>
-            </div>
-        </div>
+        {% endcall %}
 
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">TERMINAL</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content" style="font-family: 'Courier New', monospace; font-size: 0.9rem;">
+        {% call os_window("TERMINAL", content_style="font-family: 'Courier New', monospace; font-size: 0.9rem;") %}
                 C:\ROOT> SYS_MONITOR.EXE<br>
                 LOADING MODULES... OK<br>
                 ESTABLISHING SECURE CONNECTION... OK<br>
                 AWAITING INPUT...<br>
                 C:\ROOT> <span class="cursor"></span>
-            </div>
-        </div>
+        {% endcall %}
     </div>
 
     <!-- CENTER COLUMN -->
     <div class="col center">
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">LATEST_LOGS.EXE</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content">
+        {% call os_window("LATEST_LOGS.EXE") %}
                 <h3 style="color: #00f3ff; margin-top: 0; text-transform: uppercase; text-shadow: 0 0 5px #00f3ff;">>>> Recent System Logs</h3>
                 <div class="log-entry">
                     <span class="log-date">[2026-03-13]</span>
@@ -65,19 +37,9 @@
                     <span class="log-date">[2026-03-10]</span>
                     Studying Git branching strategies. Sector 4 memory allocated.
                 </div>
-            </div>
-        </div>
+        {% endcall %}
 
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">SYSTEM_STATUS.DAT</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content">
+        {% call os_window("SYSTEM_STATUS.DAT") %}
                 <div class="status-row">
                     <span class="status-label">CPU:</span>
                     <div class="bar-container">
@@ -97,40 +59,20 @@
                 <div class="status-row" style="margin-top: 15px; font-size: 0.9em; color: silver;">
                     SYS_TIME: <span id="sys-clock"></span>
                 </div>
-            </div>
-        </div>
+        {% endcall %}
 
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">VISITOR_LOG.SYS</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content" style="text-align: center;">
+        {% call os_window("VISITOR_LOG.SYS", content_style="text-align: center;") %}
                 <div style="font-size: 3rem; font-weight: bold; color: #39ff14; text-shadow: 0 0 10px #39ff14; font-family: 'Courier New', monospace; letter-spacing: 5px;">
                     0094218
                 </div>
                 <div style="color: #00f3ff; margin-top: 5px; text-shadow: 0 0 5px #00f3ff;">TOTAL UNIQUE CONNECTIONS</div>
-            </div>
-        </div>
+        {% endcall %}
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="col right">
         <!-- Media Player -->
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">MEDIA_PLAYER.BIN</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content" style="text-align: center;">
+        {% call os_window("MEDIA_PLAYER.BIN", content_style="text-align: center;") %}
                 <div style="color: #00f3ff; margin-bottom: 10px; text-shadow: 0 0 5px #00f3ff;">NOW PLAYING:</div>
                 <div style="font-weight: bold; color: #fff; margin-bottom: 15px; text-shadow: 0 0 5px #fff;">CYBER_OST.MP3</div>
                 <div style="display: flex; justify-content: space-around; font-size: 1.5rem;">
@@ -139,20 +81,10 @@
                     <span style="cursor: pointer; color:#5a7e91;">■</span>
                     <span style="cursor: pointer; color:#5a7e91;">▶▶</span>
                 </div>
-            </div>
-        </div>
+        {% endcall %}
 
         <!-- Digital Archive -->
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">DIGITAL_ARCHIVE.DIR</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content folder-grid">
+        {% call os_window("DIGITAL_ARCHIVE.DIR", content_class="folder-grid") %}
                 <div>
                     <div class="folder-icon">📁</div>
                     <div>MUSIC</div>
@@ -169,28 +101,17 @@
                     <div class="folder-icon">📁</div>
                     <div style="color: #39ff14; text-shadow: 0 0 5px #39ff14;">SECRETS</div>
                 </div>
-            </div>
-        </div>
+        {% endcall %}
 
         <!-- Guestbook Preview -->
-        <div class="os-window">
-            <div class="os-window-header">
-                <span class="os-window-title">GUEST_BOOK.LOG</span>
-                <span class="os-window-controls">
-                    <span class="control-btn">_</span>
-                    <span class="control-btn">ㅁ</span>
-                    <span class="control-btn">X</span>
-                </span>
-            </div>
-            <div class="os-window-content" style="font-size: 1rem; color: #39ff14;">
+        {% call os_window("GUEST_BOOK.LOG", content_style="font-size: 1rem; color: #39ff14;") %}
                 <div style="margin-bottom: 5px;">&lt;Neo&gt; Follow the white rabbit.</div>
                 <div style="margin-bottom: 5px; color:#00f3ff; text-shadow: 0 0 5px #00f3ff;">&lt;Trinity&gt; Dodge this.</div>
                 <div style="color:#ffffff; text-shadow: 0 0 5px #ffffff;">&lt;Morpheus&gt; Welcome to the real world.</div>
                 <div style="margin-top: 15px; text-align: right;">
                     <a href="{{ url_for('guestbook') }}" style="font-size: 1rem;">[VIEW_ALL] &gt;&gt;</a>
                 </div>
-            </div>
-        </div>
+        {% endcall %}
     </div>
 </div>
 {% endblock %}

@@ -1,17 +1,9 @@
 {% extends "base.html" %}
+{% from "macros.html" import os_window %}
 
 {% block content %}
 <div class="desktop" style="grid-template-columns: 1fr; max-width: 900px;">
-    <div class="os-window">
-        <div class="os-window-header">
-            <span class="os-window-title">GUESTBOOK.LOG</span>
-            <span class="os-window-controls">
-                <span class="control-btn">_</span>
-                <span class="control-btn">ㅁ</span>
-                <span class="control-btn">X</span>
-            </span>
-        </div>
-        <div class="os-window-content">
+    {% call os_window("GUESTBOOK.LOG") %}
             <div style="display: flex; gap: 20px; align-items: flex-start;">
                 <!-- Left Nav for back button -->
                 <div style="width: 200px; border-right: 1px dashed #00f3ff; padding-right: 20px;">
@@ -46,7 +38,6 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
-    </div>
+    {% endcall %}
 </div>
 {% endblock %}

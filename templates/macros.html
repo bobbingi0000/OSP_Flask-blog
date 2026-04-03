@@ -1,0 +1,21 @@
+{# OS Window 컴포넌트 매크로 #}
+{# 사용법: {% call os_window("TITLE") %} 내용 {% endcall %} #}
+{# 옵션: content_class — os-window-content에 추가할 CSS 클래스 #}
+{# content_style — os-window-content에 추가할 인라인 스타일 #}
+
+{% macro os_window(title, content_class="", content_style="") %}
+<div class="os-window">
+    <div class="os-window-header">
+        <span class="os-window-title">{{ title }}</span>
+        <span class="os-window-controls">
+            <span class="control-btn">_</span>
+            <span class="control-btn">ㅁ</span>
+            <span class="control-btn">X</span>
+        </span>
+    </div>
+    <div class="os-window-content{{ ' ' + content_class if content_class else '' }}" {{ ' style="' + content_style + '"'
+        if content_style else '' }}>
+        {{ caller() }}
+    </div>
+</div>
+{% endmacro %}
