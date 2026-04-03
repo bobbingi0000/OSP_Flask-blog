@@ -21,18 +21,17 @@ def register_routes(app):
     @app.route('/guestbook', methods=['GET', 'POST'])
     def guestbook():
         if request.method == 'POST':
-            author = request.form.get('author')
-            content = request.form.get('content')
+            author = request.form.get('author', '').strip()
+            content = request.form.get('content', '').strip()
 
-            if author is not None and content is not None:
-                author = author.strip()
-                content = content.strip()
+            if not author or not content:
+                return redirect(url_for('guestbook'))
+            if len(author) > 50 or len(content) > 500:
+                return redirect(url_for('guestbook'))
 
-                if len(author) > 0 and len(content) > 0 and len(author) <= 50 and len(content) <= 500:
-                    entry = GuestbookEntry(author=author, content=content)
-                    db.session.add(entry)
-                    db.session.commit()
-
+            entry = GuestbookEntry(author=author, content=content)
+            db.session.add(entry)
+            db.session.commit()
             return redirect(url_for('guestbook'))
 
         entries = GuestbookEntry.query.order_by(GuestbookEntry.created_at.desc()).limit(10).all()
