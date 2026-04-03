@@ -12,7 +12,7 @@
                 <a href="{{ url_for('write') }}">[3] WRITE_LOG</a>
         {% endcall %}
 
-        {% call os_window("TERMINAL", content_style="font-family: 'Courier New', monospace; font-size: 0.9rem;") %}
+        {% call os_window("TERMINAL", content_class="terminal-content") %}
                 C:\ROOT> SYS_MONITOR.EXE<br>
                 LOADING MODULES... OK<br>
                 ESTABLISHING SECURE CONNECTION... OK<br>
@@ -24,7 +24,7 @@
     <!-- CENTER COLUMN -->
     <div class="col center">
         {% call os_window("LATEST_LOGS.EXE") %}
-                <h3 style="color: #00f3ff; margin-top: 0; text-transform: uppercase; text-shadow: 0 0 5px #00f3ff;">>>> Recent System Logs</h3>
+                <h3 class="section-heading">>>> Recent System Logs</h3>
                 <div class="log-entry">
                     <span class="log-date">[2026-03-13]</span>
                     SYSTEM INITIALIZED. Hello World. Boot sequence completed normally.
@@ -33,7 +33,7 @@
                     <span class="log-date">[2026-03-12]</span>
                     Thinking about the stock market... uploading thoughts to mainframe.
                 </div>
-                <div class="log-entry" style="border-bottom: none;">
+                <div class="log-entry log-entry--last">
                     <span class="log-date">[2026-03-10]</span>
                     Studying Git branching strategies. Sector 4 memory allocated.
                 </div>
@@ -54,32 +54,32 @@
                 </div>
                 <div class="status-row">
                     <span class="status-label">NETWORK:</span>
-                    <span style="color: #39ff14; font-weight: bold; text-shadow: 0 0 5px #39ff14;">ONLINE</span>
+                    <span class="text-neon-green font-bold">ONLINE</span>
                 </div>
-                <div class="status-row" style="margin-top: 15px; font-size: 0.9em; color: silver;">
+                <div class="status-row status-row--clock">
                     SYS_TIME: <span id="sys-clock"></span>
                 </div>
         {% endcall %}
 
-        {% call os_window("VISITOR_LOG.SYS", content_style="text-align: center;") %}
-                <div style="font-size: 3rem; font-weight: bold; color: #39ff14; text-shadow: 0 0 10px #39ff14; font-family: 'Courier New', monospace; letter-spacing: 5px;">
+        {% call os_window("VISITOR_LOG.SYS", content_class="text-center") %}
+                <div class="visitor-counter">
                     0094218
                 </div>
-                <div style="color: #00f3ff; margin-top: 5px; text-shadow: 0 0 5px #00f3ff;">TOTAL UNIQUE CONNECTIONS</div>
+                <div class="text-neon-cyan" style="margin-top: 5px;">TOTAL UNIQUE CONNECTIONS</div>
         {% endcall %}
     </div>
 
     <!-- RIGHT COLUMN -->
     <div class="col right">
         <!-- Media Player -->
-        {% call os_window("MEDIA_PLAYER.BIN", content_style="text-align: center;") %}
-                <div style="color: #00f3ff; margin-bottom: 10px; text-shadow: 0 0 5px #00f3ff;">NOW PLAYING:</div>
-                <div style="font-weight: bold; color: #fff; margin-bottom: 15px; text-shadow: 0 0 5px #fff;">CYBER_OST.MP3</div>
-                <div style="display: flex; justify-content: space-around; font-size: 1.5rem;">
-                    <span style="cursor: pointer; color:#5a7e91;">◀◀</span>
-                    <span style="cursor: pointer; color:#39ff14; text-shadow: 0 0 8px #39ff14;">▶</span>
-                    <span style="cursor: pointer; color:#5a7e91;">■</span>
-                    <span style="cursor: pointer; color:#5a7e91;">▶▶</span>
+        {% call os_window("MEDIA_PLAYER.BIN", content_class="text-center") %}
+                <div class="text-neon-cyan" style="margin-bottom: 10px;">NOW PLAYING:</div>
+                <div class="text-white font-bold" style="margin-bottom: 15px;">CYBER_OST.MP3</div>
+                <div class="media-player-controls">
+                    <span>◀◀</span>
+                    <span class="active">▶</span>
+                    <span>■</span>
+                    <span>▶▶</span>
                 </div>
         {% endcall %}
 
@@ -99,17 +99,17 @@
                 </div>
                 <div>
                     <div class="folder-icon">📁</div>
-                    <div style="color: #39ff14; text-shadow: 0 0 5px #39ff14;">SECRETS</div>
+                    <div class="text-neon-green">SECRETS</div>
                 </div>
         {% endcall %}
 
         <!-- Guestbook Preview -->
-        {% call os_window("GUEST_BOOK.LOG", content_style="font-size: 1rem; color: #39ff14;") %}
-                <div style="margin-bottom: 5px;">&lt;Neo&gt; Follow the white rabbit.</div>
-                <div style="margin-bottom: 5px; color:#00f3ff; text-shadow: 0 0 5px #00f3ff;">&lt;Trinity&gt; Dodge this.</div>
-                <div style="color:#ffffff; text-shadow: 0 0 5px #ffffff;">&lt;Morpheus&gt; Welcome to the real world.</div>
-                <div style="margin-top: 15px; text-align: right;">
-                    <a href="{{ url_for('guestbook') }}" style="font-size: 1rem;">[VIEW_ALL] &gt;&gt;</a>
+        {% call os_window("GUEST_BOOK.LOG", content_class="guestbook-preview") %}
+                <div class="guestbook-preview__entry">&lt;Neo&gt; Follow the white rabbit.</div>
+                <div class="guestbook-preview__entry text-neon-cyan">&lt;Trinity&gt; Dodge this.</div>
+                <div class="text-white">&lt;Morpheus&gt; Welcome to the real world.</div>
+                <div class="guestbook-preview__link">
+                    <a href="{{ url_for('guestbook') }}">[VIEW_ALL] &gt;&gt;</a>
                 </div>
         {% endcall %}
     </div>
