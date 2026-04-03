@@ -10,12 +10,13 @@ def register_routes(app):
         return render_template('index.html')
 
     # 2. 글쓰기 페이지
+    # TODO: Post 모델 구현 후 DB 저장 기능 활성화 예정 (feature_ready=True로 전환)
     @app.route('/write', methods=['GET', 'POST'])
     def write():
         if request.method == 'POST':
             title = request.form.get('title')
-            return render_template('write.html', title=title)
-        return render_template('write.html')
+            return render_template('write.html', title=title, feature_ready=False)
+        return render_template('write.html', feature_ready=False)
 
     # 3. 방명록 페이지
     @app.route('/guestbook', methods=['GET', 'POST'])

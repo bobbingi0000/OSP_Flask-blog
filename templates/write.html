@@ -14,9 +14,14 @@
         <div class="os-window-content">
             {% if request.method == 'POST' %}
             <div style="text-align: center; padding: 30px;">
+                {% if feature_ready %}
                 <h3 style="color: #00f3ff; text-shadow: 0 0 5px #00f3ff;">Upload Success!</h3>
                 <p style="font-size: 1.2rem; color: #39ff14;">Post "<b style="color: #fff; text-shadow: 0 0 5px #fff;">{{ title }}</b>" has been saved to the
                     mainframe.</p>
+                {% else %}
+                <h3 style="color: #f0c040; text-shadow: 0 0 5px #f0c040;">🚧 UNDER CONSTRUCTION 🚧</h3>
+                <p style="font-size: 1.2rem; color: #5a7e91;">Post "<b style="color: #fff; text-shadow: 0 0 5px #fff;">{{ title }}</b>" — 저장 기능은 현재 준비 중입니다.</p>
+                {% endif %}
                 <br><br>
                 <a href="{{ url_for('home') }}" style="border: 1px solid #39ff14; padding: 10px 20px; color: #39ff14; text-shadow: 0 0 5px #39ff14; box-shadow: inset 0 0 5px #39ff14, 0 0 5px #39ff14; display: inline-block;">[ RETURN TO HOME ]</a>
             </div>
