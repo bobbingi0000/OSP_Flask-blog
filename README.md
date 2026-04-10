@@ -11,7 +11,7 @@
 
 | Home | Write | Guestbook |
 |:----:|:-----:|:---------:|
-| ![Home](docs/home.png) | ![Write](docs/write.png) | ![Guestbook](docs/guestbook.png) |
+| ![Home](docs/assets/home.png) | ![Write](docs/assets/write.png) | ![Guestbook](docs/assets/guestbook.png) |
 
 ---
 
