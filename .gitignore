@@ -1,6 +1,15 @@
-# 기본 사항
+# Defaults
 __pycache__/
 venv/
 ReferenceImages/
 app.db
-*.md
+
+# Sphinx build output
+docs/_build/
+
+# IDE
+.vscode/
+.idea/
+
+# Others
+others/
