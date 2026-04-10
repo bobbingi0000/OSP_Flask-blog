@@ -11,7 +11,10 @@
 
 | Home | Write | Guestbook |
 |:----:|:-----:|:---------:|
-| ![Home](docs/assets/screenshot_home.png) | ![Write](docs/assets/screenshot_write.png) | ![Guestbook](docs/assets/screenshot_guestbook.png) |
+| ![Home](<img width="1920" height="917" alt="image" src="https://github.com/user-attachments/assets/38c49559-5cb9-4f6e-98ff-53acd41c08b0" />
+) | ![Write](<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/f01bee0a-ce09-4465-97a5-08f059facc97" />
+) | ![Guestbook](<img width="1920" height="911" alt="image" src="https://github.com/user-attachments/assets/4969e7c7-94b7-4610-adbc-6fcc50dc0de0" />
+) |
 
 ---
 
