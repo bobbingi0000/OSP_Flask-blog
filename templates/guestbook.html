@@ -1,52 +1,42 @@
 {% extends "base.html" %}
+{% from "macros.html" import os_window %}
 
 {% block content %}
-<div class="desktop" style="grid-template-columns: 1fr; max-width: 900px;">
-    <div class="os-window">
-        <div class="os-window-header">
-            <span class="os-window-title">GUESTBOOK.LOG</span>
-            <span class="os-window-controls">
-                <span class="control-btn">_</span>
-                <span class="control-btn">ㅁ</span>
-                <span class="control-btn">X</span>
-            </span>
-        </div>
-        <div class="os-window-content">
-            <div style="display: flex; gap: 20px; align-items: flex-start;">
+<div class="desktop desktop--single-wide">
+    {% call os_window("GUESTBOOK.LOG") %}
+            <div class="guestbook-layout">
                 <!-- Left Nav for back button -->
-                <div style="width: 200px; border-right: 1px dashed #00f3ff; padding-right: 20px;">
+                <div class="guestbook-sidebar">
                     <div class="nav-list">
                         <a href="{{ url_for('home') }}">[0] RETURN_HOME</a>
                     </div>
 
-                    <div style="margin-top: 30px;">
-                        <span style="color: #5a7e91; display: block; margin-bottom: 5px;">STATUS:</span>
-                        <span style="color: #39ff14; text-shadow: 0 0 5px #39ff14;">ACCEPTING CONNECTIONS...</span>
+                    <div class="guestbook-sidebar__status">
+                        <span class="text-muted" style="display: block; margin-bottom: 5px;">STATUS:</span>
+                        <span class="text-neon-green">ACCEPTING CONNECTIONS...</span>
                     </div>
                 </div>
 
                 <!-- Right content -->
-                <div style="flex-grow: 1;">
-                    <h3 style="color: #00f3ff; margin-top: 0; text-shadow: 0 0 5px #00f3ff;">>>> Leave a Trace</h3>
-                    <form action="{{ url_for('guestbook') }}" method="post"
-                        style="display: flex; gap: 10px; margin-bottom: 30px;">
-                        <input type="text" name="author" placeholder="Visitor_Name" style="flex: 1;" required maxlength="50">
-                        <input type="text" name="content" placeholder="Drop a line..." style="flex: 3;" required maxlength="500">
-                        <button type="submit" style="background: #0c151c; color: #00f3ff; border: 1px solid #00f3ff; box-shadow: inset 0 0 5px #00f3ff;">SIGN_LOG</button>
+                <div class="guestbook-main">
+                    <h3 class="section-heading">>>> Leave a Trace</h3>
+                    <form action="{{ url_for('guestbook') }}" method="post" class="guestbook-form">
+                        <input type="text" name="author" placeholder="Visitor_Name" required maxlength="50">
+                        <input type="text" name="content" placeholder="Drop a line..." required maxlength="500">
+                        <button type="submit" class="btn-cyan">SIGN_LOG</button>
                     </form>
 
-                    <hr style="border: 0; border-bottom: 1px dashed rgba(0, 243, 255, 0.5); margin-bottom: 20px;">
+                    <hr class="guestbook-divider">
 
                     {% for entry in entries %}
                     <div class="log-entry">
-                        <span style="color: #00f3ff; font-weight: bold; text-shadow: 0 0 5px #00f3ff;">[{{ entry.author }}]</span>:
-                        <span style="color: #5a7e91;">{{ entry.content }}</span>
-                        <div style="font-size: 0.8em; color: #39ff14; margin-top: 5px; opacity: 0.8;">TIME: {{ entry.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</div>
+                        <span class="log-entry__author">[{{ entry.author }}]</span>:
+                        <span class="log-entry__content">{{ entry.content }}</span>
+                        <div class="log-entry__time">TIME: {{ entry.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</div>
                     </div>
                     {% endfor %}
                 </div>
             </div>
-        </div>
-    </div>
+    {% endcall %}
 </div>
 {% endblock %}

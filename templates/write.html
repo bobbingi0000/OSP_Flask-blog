@@ -1,43 +1,38 @@
 {% extends "base.html" %}
+{% from "macros.html" import os_window %}
 
 {% block content %}
-<div class="desktop" style="grid-template-columns: 1fr; max-width: 800px;">
-    <div class="os-window">
-        <div class="os-window-header">
-            <span class="os-window-title">{{ page_title | default('NEW LOG ENTRY') }}</span>
-            <span class="os-window-controls">
-                <span class="control-btn">_</span>
-                <span class="control-btn">ㅁ</span>
-                <span class="control-btn">X</span>
-            </span>
-        </div>
-        <div class="os-window-content">
+<div class="desktop desktop--single-narrow">
+    {% call os_window(page_title | default('NEW LOG ENTRY')) %}
             {% if request.method == 'POST' %}
-            <div style="text-align: center; padding: 30px;">
-                <h3 style="color: #00f3ff; text-shadow: 0 0 5px #00f3ff;">Upload Success!</h3>
-                <p style="font-size: 1.2rem; color: #39ff14;">Post "<b style="color: #fff; text-shadow: 0 0 5px #fff;">{{ title }}</b>" has been saved to the
+            <div class="form-result">
+                {% if feature_ready %}
+                <h3 class="text-neon-cyan">Upload Success!</h3>
+                <p class="form-result__message text-neon-green">Post "<b class="text-white">{{ title }}</b>" has been saved to the
                     mainframe.</p>
+                {% else %}
+                <h3 class="text-warning">🚧 UNDER CONSTRUCTION 🚧</h3>
+                <p class="form-result__message text-muted">Post "<b class="text-white">{{ title }}</b>" — 저장 기능은 현재 준비 중입니다.</p>
+                {% endif %}
                 <br><br>
-                <a href="{{ url_for('home') }}" style="border: 1px solid #39ff14; padding: 10px 20px; color: #39ff14; text-shadow: 0 0 5px #39ff14; box-shadow: inset 0 0 5px #39ff14, 0 0 5px #39ff14; display: inline-block;">[ RETURN TO HOME ]</a>
+                <a href="{{ url_for('home') }}" class="btn-green">[ RETURN TO HOME ]</a>
             </div>
             {% else %}
             <form action="{{ url_for('write') }}" method="post">
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 5px; color: #00f3ff; text-shadow: 0 0 5px #00f3ff;">>>> TITLE:</label>
-                    <input type="text" name="title" style="width: 100%; border-color: #00f3ff;" required>
+                <div class="form-group">
+                    <label class="form-label">>>> TITLE:</label>
+                    <input type="text" name="title" class="form-input--full" required>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 5px; color: #00f3ff; text-shadow: 0 0 5px #00f3ff;">>>> LOG_CONTENT:</label>
-                    <textarea name="content" rows="10" style="width: 100%;" required></textarea>
+                <div class="form-group--large">
+                    <label class="form-label">>>> LOG_CONTENT:</label>
+                    <textarea name="content" rows="10" class="form-input--full" required></textarea>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <a href="{{ url_for('home') }}" style="color: #5a7e91; text-shadow: none;">[ ABORT ]</a>
-                    <button type="submit" style="padding: 10px 30px; font-size: 1.2rem; background: #0c151c; color: #39ff14; box-shadow: inset 0 0 5px #39ff14; border: 1px solid #39ff14;">TRANSMIT
-                        DATA</button>
+                <div class="form-actions">
+                    <a href="{{ url_for('home') }}" class="text-muted">[ ABORT ]</a>
+                    <button type="submit" class="btn-submit">TRANSMIT DATA</button>
                 </div>
             </form>
             {% endif %}
-        </div>
-    </div>
+    {% endcall %}
 </div>
 {% endblock %}
