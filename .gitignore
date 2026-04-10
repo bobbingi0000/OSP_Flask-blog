@@ -3,9 +3,6 @@ __pycache__/
 venv/
 ReferenceImages/
 app.db
-<<<<<<< Updated upstream
-profile.md
-=======
 
 # Sphinx build output
 docs/_build/
@@ -14,6 +11,5 @@ docs/_build/
 .vscode/
 .idea/
 
-# 기타
+# Others
 others/
->>>>>>> Stashed changes
