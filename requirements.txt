@@ -1,2 +1,9 @@
 Flask==3.1.2
 Flask-SQLAlchemy
+flasgger
+pytest
+
+# --- Documentation ---
+Sphinx
+sphinx-rtd-theme
+sphinx-autodoc-typehints
