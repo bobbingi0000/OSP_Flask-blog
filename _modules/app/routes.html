@@ -1,0 +1,324 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>app.routes &mdash; Cyber Y2K Blog 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1a1a2e" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Cyber Y2K Blog
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/app.html">app Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/app.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/routes.html">app.routes Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/routes.html#app.routes.register_routes"><code class="docutils literal notranslate"><span class="pre">register_routes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/models.html">app.models Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/models.html#app.models.db"><code class="docutils literal notranslate"><span class="pre">db</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/models.html#app.models.GuestbookEntry"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#app.models.GuestbookEntry.id"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#app.models.GuestbookEntry.author"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.author</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#app.models.GuestbookEntry.content"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#app.models.GuestbookEntry.created_at"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.created_at</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#id0"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#id1"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.author</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#id2"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#id3"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.created_at</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/models.html#app.models.GuestbookEntry.query"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.query</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/config.html">app.config Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/config.html#app.config.basedir"><code class="docutils literal notranslate"><span class="pre">basedir</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/config.html#app.config.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/config.html#app.config.Config.SQLALCHEMY_DATABASE_URI"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_DATABASE_URI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/config.html#app.config.Config.SQLALCHEMY_TRACK_MODIFICATIONS"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_TRACK_MODIFICATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/config.html#id0"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_DATABASE_URI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/config.html#id1"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_TRACK_MODIFICATIONS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1a1a2e" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Cyber Y2K Blog</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../app.html">app</a></li>
+      <li class="breadcrumb-item active">app.routes</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for app.routes</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Routes module — Defines all URL endpoints for the Y2K blog.</span>
+
+<span class="sd">This module contains the view functions to be registered with the</span>
+<span class="sd">Flask app. Each function includes a Flasgger (OpenAPI 3.0) docstring</span>
+<span class="sd">for automatic documentation at ``/apidocs``.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">db</span><span class="p">,</span> <span class="n">GuestbookEntry</span>
+
+
+<div class="viewcode-block" id="register_routes">
+<a class="viewcode-back" href="../../modules/routes.html#app.routes.register_routes">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">register_routes</span><span class="p">(</span><span class="n">application</span><span class="p">:</span> <span class="n">Flask</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Registers all URL rules with the Flask app instance.</span>
+
+<span class="sd">    Binds three endpoints — Home (``/``), Write (``/write``), and</span>
+<span class="sd">    Guestbook (``/guestbook``) — to the Flask app. Each view function</span>
+<span class="sd">    contains a Flasgger OpenAPI YAML docstring for automatic exposure</span>
+<span class="sd">    in Swagger UI.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        application (Flask): Flask application instance.</span>
+<span class="sd">            The app object created by the ``create_app()`` factory.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        None: This function has no return value. It registers routes</span>
+<span class="sd">            on the app as a side effect.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># ── 1. Home Page ─────────────────────────────────────────────</span>
+    <span class="nd">@application</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+    <span class="nd">@application</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/home&#39;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">home</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the Y2K blog main page.</span>
+
+<span class="sd">        Serves as the blog landing page with a retro visitor counter</span>
+<span class="sd">        aesthetic and a recent posts feed.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Rendered ``index.html`` template HTML string.</span>
+
+<span class="sd">        ---</span>
+<span class="sd">        tags:</span>
+<span class="sd">          - Home</span>
+<span class="sd">        summary: Retrieve main page</span>
+<span class="sd">        description: |</span>
+<span class="sd">          The blog landing page. Features a retro visitor counter</span>
+<span class="sd">          aesthetic and a recent posts feed.</span>
+<span class="sd">        responses:</span>
+<span class="sd">          200:</span>
+<span class="sd">            description: Successfully returns the home page HTML.</span>
+<span class="sd">            content:</span>
+<span class="sd">              text/html:</span>
+<span class="sd">                schema:</span>
+<span class="sd">                  type: string</span>
+<span class="sd">                  example: &quot;&lt;html&gt;...Y2K Home...&lt;/html&gt;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;index.html&#39;</span><span class="p">)</span>
+
+    <span class="c1"># ── 2. Write Page ────────────────────────────────────────────</span>
+    <span class="c1"># TODO: Enable DB persistence after Post model is implemented (set feature_ready=True)</span>
+    <span class="nd">@application</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/write&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Renders the terminal-style writing page.</span>
+
+<span class="sd">        On GET request, displays a hacker/cyber-themed terminal-style</span>
+<span class="sd">        writing form. On POST request, submits the title to the server.</span>
+<span class="sd">        DB persistence is currently disabled.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Rendered ``write.html`` template HTML string.</span>
+<span class="sd">                Includes the submitted title on POST requests.</span>
+
+<span class="sd">        ---</span>
+<span class="sd">        tags:</span>
+<span class="sd">          - Write</span>
+<span class="sd">        summary: View write form / submit post</span>
+<span class="sd">        description: |</span>
+<span class="sd">          **GET**: Displays a hacker/cyber-themed terminal-style writing form.</span>
+<span class="sd">          **POST**: Submits the title to the server.</span>
+<span class="sd">          *DB persistence is currently disabled (feature_ready=False).*</span>
+<span class="sd">        parameters:</span>
+<span class="sd">          - in: formData</span>
+<span class="sd">            name: title</span>
+<span class="sd">            type: string</span>
+<span class="sd">            required: false</span>
+<span class="sd">            description: Post title (for POST requests)</span>
+<span class="sd">            example: &quot;Millennium Diary ✨&quot;</span>
+<span class="sd">        responses:</span>
+<span class="sd">          200:</span>
+<span class="sd">            description: Successfully returns the write page HTML.</span>
+<span class="sd">            content:</span>
+<span class="sd">              text/html:</span>
+<span class="sd">                schema:</span>
+<span class="sd">                  type: string</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;write.html&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">feature_ready</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;write.html&#39;</span><span class="p">,</span> <span class="n">feature_ready</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># ── 3. Guestbook Page ────────────────────────────────────────</span>
+    <span class="nd">@application</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/guestbook&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">guestbook</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieves or creates Y2K mini-homepage style guestbook entries.</span>
+
+<span class="sd">        On GET request, displays the 10 most recent guestbook entries</span>
+<span class="sd">        in descending order. On POST request, validates the author and</span>
+<span class="sd">        content fields before saving to the database.</span>
+
+<span class="sd">        Validation rules:</span>
+<span class="sd">            - author: required, no whitespace-only, max 50 chars</span>
+<span class="sd">            - content: required, no whitespace-only, max 500 chars</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Rendered ``guestbook.html`` HTML string on GET request.</span>
+<span class="sd">                A 302 redirect response to ``/guestbook`` on POST request.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            sqlalchemy.exc.IntegrityError: May occur if a database</span>
+<span class="sd">                constraint is violated. However, pre-validation ensures</span>
+<span class="sd">                this does not happen under normal flow.</span>
+
+<span class="sd">        ---</span>
+<span class="sd">        tags:</span>
+<span class="sd">          - Guestbook</span>
+<span class="sd">        summary: View guestbook / create new entry</span>
+<span class="sd">        description: |</span>
+<span class="sd">          **GET**: Displays the 10 most recent guestbook entries in descending order.</span>
+<span class="sd">          **POST**: Validates author and content, then saves to the database.</span>
+
+<span class="sd">          ### Validation Rules</span>
+<span class="sd">          | Field   | Constraint                              |</span>
+<span class="sd">          |---------|-----------------------------------------|</span>
+<span class="sd">          | author  | Required, no whitespace-only, max 50    |</span>
+<span class="sd">          | content | Required, no whitespace-only, max 500   |</span>
+<span class="sd">        parameters:</span>
+<span class="sd">          - in: formData</span>
+<span class="sd">            name: author</span>
+<span class="sd">            type: string</span>
+<span class="sd">            required: true</span>
+<span class="sd">            description: Guestbook author name (max 50 chars, whitespace-only not allowed)</span>
+<span class="sd">            example: &quot;Neo&quot;</span>
+<span class="sd">          - in: formData</span>
+<span class="sd">            name: content</span>
+<span class="sd">            type: string</span>
+<span class="sd">            required: true</span>
+<span class="sd">            description: Guestbook message content (max 500 chars, whitespace-only not allowed)</span>
+<span class="sd">            example: &quot;Follow the white rabbit 🐇&quot;</span>
+<span class="sd">        responses:</span>
+<span class="sd">          200:</span>
+<span class="sd">            description: Successfully returns the guestbook page HTML (GET request).</span>
+<span class="sd">            content:</span>
+<span class="sd">              text/html:</span>
+<span class="sd">                schema:</span>
+<span class="sd">                  type: string</span>
+<span class="sd">          302:</span>
+<span class="sd">            description: |</span>
+<span class="sd">              Redirects to the guestbook page after POST request.</span>
+<span class="sd">              - On successful save → redirects to guestbook list</span>
+<span class="sd">              - On validation failure → redirects to guestbook list (no save)</span>
+<span class="sd">            headers:</span>
+<span class="sd">              Location:</span>
+<span class="sd">                description: Redirect target URL</span>
+<span class="sd">                schema:</span>
+<span class="sd">                  type: string</span>
+<span class="sd">                  example: &quot;/guestbook&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+            <span class="n">author</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;author&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="n">content</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">author</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">content</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;guestbook&#39;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">author</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;guestbook&#39;</span><span class="p">))</span>
+
+            <span class="n">entry</span> <span class="o">=</span> <span class="n">GuestbookEntry</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="n">author</span><span class="p">,</span> <span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;guestbook&#39;</span><span class="p">))</span>
+
+        <span class="n">entries</span> <span class="o">=</span> <span class="n">GuestbookEntry</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span>
+            <span class="n">GuestbookEntry</span><span class="o">.</span><span class="n">created_at</span><span class="o">.</span><span class="n">desc</span><span class="p">()</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">limit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;guestbook.html&#39;</span><span class="p">,</span> <span class="n">entries</span><span class="o">=</span><span class="n">entries</span><span class="p">)</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Y2K Blog Developer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

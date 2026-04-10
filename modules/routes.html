@@ -1,0 +1,173 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>app.routes Module &mdash; Cyber Y2K Blog 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="app.models Module" href="models.html" />
+    <link rel="prev" title="app Package" href="app.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1a1a2e" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Cyber Y2K Blog
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="app.html">app Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app.html#app.create_app"><code class="docutils literal notranslate"><span class="pre">create_app()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">app.routes Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#app.routes.register_routes"><code class="docutils literal notranslate"><span class="pre">register_routes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="models.html">app.models Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="models.html#app.models.db"><code class="docutils literal notranslate"><span class="pre">db</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html#app.models.GuestbookEntry"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.GuestbookEntry.id"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.GuestbookEntry.author"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.author</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.GuestbookEntry.content"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.GuestbookEntry.created_at"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.created_at</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#id0"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.id</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#id1"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.author</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#id2"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.content</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#id3"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.created_at</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="models.html#app.models.GuestbookEntry.query"><code class="docutils literal notranslate"><span class="pre">GuestbookEntry.query</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">app.config Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="config.html#app.config.basedir"><code class="docutils literal notranslate"><span class="pre">basedir</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html#app.config.Config"><code class="docutils literal notranslate"><span class="pre">Config</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="config.html#app.config.Config.SQLALCHEMY_DATABASE_URI"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_DATABASE_URI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#app.config.Config.SQLALCHEMY_TRACK_MODIFICATIONS"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_TRACK_MODIFICATIONS</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#id0"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_DATABASE_URI</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="config.html#id1"><code class="docutils literal notranslate"><span class="pre">Config.SQLALCHEMY_TRACK_MODIFICATIONS</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1a1a2e" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Cyber Y2K Blog</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">app.routes Module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/routes.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-app.routes">
+<span id="app-routes-module"></span><h1>app.routes Module<a class="headerlink" href="#module-app.routes" title="Link to this heading"></a></h1>
+<p>Routes module — Defines all URL endpoints for the Y2K blog.</p>
+<p>This module contains the view functions to be registered with the
+Flask app. Each function includes a Flasgger (OpenAPI 3.0) docstring
+for automatic documentation at <code class="docutils literal notranslate"><span class="pre">/apidocs</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routes.register_routes">
+<span class="sig-prename descclassname"><span class="pre">app.routes.</span></span><span class="sig-name descname"><span class="pre">register_routes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/app/routes.html#register_routes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#app.routes.register_routes" title="Link to this definition"></a></dt>
+<dd><p>Registers all URL rules with the Flask app instance.</p>
+<p>Binds three endpoints — Home (<code class="docutils literal notranslate"><span class="pre">/</span></code>), Write (<code class="docutils literal notranslate"><span class="pre">/write</span></code>), and
+Guestbook (<code class="docutils literal notranslate"><span class="pre">/guestbook</span></code>) — to the Flask app. Each view function
+contains a Flasgger OpenAPI YAML docstring for automatic exposure
+in Swagger UI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>application</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://flask.palletsprojects.com/en/stable/api/#flask.Flask" title="(in Flask v3.1.x)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Flask</span></code></a></span>) – Flask application instance.
+The app object created by the <code class="docutils literal notranslate"><span class="pre">create_app()</span></code> factory.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>This function has no return value. It registers routes</dt><dd><p>on the app as a side effect.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></a></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="app.html" class="btn btn-neutral float-left" title="app Package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="models.html" class="btn btn-neutral float-right" title="app.models Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Y2K Blog Developer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
