@@ -1,23 +1,79 @@
-# Cyber Y2K Personal Digital Space
+# 🛸 Cyber Y2K Personal Digital Space
 
-## 📌 Project Overview
-이 프로젝트는 2000년대 초반 Y2K 감성(싸이월드 미니홈피, 개인 HTML 홈페이지 등)과 크롬(Chrome) 텍스처를 테마로 한 개인 블로그 웹 서비스입니다. 
-Flask를 기반으로 구축되었으며, 향후 개인 포트폴리오 아카이빙 목적으로 확장할 예정입니다.
+**A retro-futuristic personal blog inspired by early-2000s internet culture — built with Flask.**
 
-## 🚀 Key Features (Pages)
-본 미니 프로젝트는 요구사항에 맞춰 최소 3가지 이상의 기능(엔드포인트)을 포함하고 있습니다.
-1. **Home (`/`, `/home`)**: 블로그 대문 역할. 방문자 카운터 감성과 최근 작성된 로그(글) 목록을 확인할 수 있는 메인 피드입니다.
-2. **Write (`/write`)**: 해커/사이버 감성의 터미널 스타일 폼에서 새로운 글(제목, 내용)을 서버로 전송하는 글쓰기 페이지입니다.
-3. **Guestbook (`/guestbook`)**: 2000년대 미니홈피 스타일의 방명록. 방문자가 이름과 짧은 메시지(일촌평)를 남길 수 있는 소통 공간입니다.
+---
 
-## 🛠 Tech Stack
-* **Backend**: Python, Flask (v3.1.2)
-* **Frontend**: HTML5, CSS3 (Inline)
-* **VCS**: Git & GitHub
+## 📸 Visual Demonstration
 
-## ⚙️ How to Run
-로컬 환경에서 이 프로젝트를 실행하기 위한 방법입니다.
+<!-- Replace the comments below with actual screenshots or a demo GIF -->
+<!-- ![Demo GIF](docs/assets/demo.gif) -->
 
-1. **종속성 설치**
-   ```bash
-   pip install -r requirements.txt
+| Home | Write | Guestbook |
+|:----:|:-----:|:---------:|
+| ![Home](docs/assets/screenshot_home.png) | ![Write](docs/assets/screenshot_write.png) | ![Guestbook](docs/assets/screenshot_guestbook.png) |
+
+---
+
+## 💡 Motivation & Problem
+
+Modern web design has become homogeneous — clean, minimal, and predictable.
+This project is a deliberate throwback to the raw creativity of early-2000s personal homepages:
+Cyworld mini-hompys, chrome textures, CRT monitor glow, and visitor counters.
+
+The goal was to learn **full-stack web fundamentals** (routing, templating, ORM, testing, API documentation)
+by building something fun rather than another generic CRUD app.
+Every technical decision was made to maximize learning while keeping the Y2K vibe alive.
+
+---
+
+## 🛠 Tech Stack & Rationale
+
+| Technology | Why I Chose It |
+|------------|---------------|
+| **Flask 3.1.2** | Micro-framework with zero boilerplate — gives full control over architecture instead of hiding it behind magic. |
+| **Flask-SQLAlchemy** | ORM-based DB access prevents raw SQL and provides built-in protection against SQL injection. |
+| **Flasgger** | Generates interactive Swagger UI directly from docstrings — API docs stay in sync with code automatically. |
+| **Sphinx** | Extracts Google-style docstrings into browsable HTML docs; deployable to GitHub Pages. |
+| **pytest** | 8 test cases covering CRUD, SQL injection, XSS, length limits, whitespace bypass, and pagination. |
+
+---
+
+## ✨ Key Features
+
+- **Y2K Aesthetic** — CRT glow effects, chrome textures, retro visitor counter, and Cyworld-inspired guestbook UI.
+- **Guestbook CRUD** — Create and read entries with full server-side input validation (empty, whitespace-only, length overflow).
+- **Security by Default** — SQL injection blocked by SQLAlchemy ORM; XSS neutralized by Jinja2 auto-escaping.
+- **Pagination** — Guestbook queries are capped at 10 entries to prevent memory exhaustion from unbounded `.all()` calls.
+- **Interactive API Docs** — Swagger UI at `/apidocs` with OpenAPI specs embedded in every route's docstring.
+- **Auto-generated Code Docs** — Sphinx + Napoleon parse Google-style docstrings into a full HTML documentation site.
+
+---
+
+## 🚀 Getting Started
+
+> WSL (Ubuntu) environment. Works identically on macOS and native Linux.
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/bobbingi0000/OSP_Flask-blog.git
+cd OSP_Flask-blog
+
+# 2. Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the development server
+export FLASK_APP=run.py
+flask run --debug
+
+# 5. Run tests
+pytest -v
+```
+
+- **App** → http://127.0.0.1:5000
+- **Swagger UI** → http://127.0.0.1:5000/apidocs
+- **Sphinx Docs** → [GitHub Pages](https://bobbingi0000.github.io/OSP_Flask-blog/) *(deploy to activate)*
