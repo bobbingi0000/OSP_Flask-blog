@@ -1,6 +1,19 @@
-# 기본 사항
+# Defaults
 __pycache__/
 venv/
 ReferenceImages/
 app.db
+<<<<<<< Updated upstream
 profile.md
+=======
+
+# Sphinx build output
+docs/_build/
+
+# IDE
+.vscode/
+.idea/
+
+# 기타
+others/
+>>>>>>> Stashed changes
